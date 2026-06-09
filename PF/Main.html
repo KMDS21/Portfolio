@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaveesha De Silva | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+            transform: translateY(-2px);
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(59 130 246 / 0.25);
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #3b82f6;
+            bottom: -8px;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-blue-600 rounded-2xl flex items-center justify-center text-xl font-bold">K</div>
+                <span class="text-2xl font-semibold tracking-tight">Kaveesha De Silva</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="#" id="download-cv" 
+                   class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl text-sm font-semibold flex items-center gap-2">
+                    <i class="fas fa-download"></i>
+                    <span>Download CV</span>
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-zinc-950 z-50 pt-20">
+        <div class="flex flex-col items-center gap-8 text-xl">
+            <a href="#home" onclick="toggleMobileMenu()" class="nav-link">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="nav-link">Projects</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Home -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 rounded-3xl text-sm">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    Available for opportunities
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight">
+                    Hi, I'm <span class="text-blue-500">Kaveesha De Silva</span>
+                </h1>
+                
+                <p class="text-2xl text-zinc-400">
+                    Aspiring Software Engineer
+                </p>
+                
+                <p class="text-zinc-400 max-w-md text-lg">
+                    Information Technology undergraduate pursuing BICT (Hons) with specialization in Software System Technology at University of Kelaniya. Passionate about Flutter, Firebase, IoT, and building real-time systems.
+                </p>
+                
+                <div class="flex items-center gap-4">
+                    <a href="#projects" 
+                       class="px-8 py-4 bg-blue-600 hover:bg-blue-700 transition-all rounded-3xl font-semibold text-lg flex items-center gap-3">
+                        View Projects
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-zinc-400 hover:border-white transition-all rounded-3xl font-semibold text-lg">
+                        Get In Touch
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 pt-8">
+                    <a href="https://github.com" target="_blank" class="text-3xl hover:text-blue-500 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="text-3xl hover:text-blue-500 transition-colors"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="aspect-square max-w-md mx-auto">
+                    <div class="w-full h-full rounded-[4rem] overflow-hidden border-8 border-zinc-800 shadow-2xl">
+                        <img src="linkdin profile.png" alt="Kaveesha De Silva" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Decorative elements -->
+                <div class="absolute -top-6 -right-6 bg-zinc-900 px-6 py-3 rounded-3xl border border-blue-500/30 text-sm flex items-center gap-3">
+                    <span class="text-emerald-400">●</span>
+                    Open to Work
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
+            <span>SCROLL TO EXPLORE</span>
+            <i class="fas fa-chevron-down animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-28 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <!-- Left content -->
+                <div class="md:col-span-7">
+                    <h2 class="section-header text-5xl font-semibold mb-8">About Me</h2>
+                    
+                    <div class="prose prose-invert prose-lg text-zinc-300 max-w-none">
+                        <p>
+                            Motivated and detail-oriented Information Technology undergraduate pursuing a BICT (Hons) degree with specialization in Software System Technology at the University of Kelaniya. 
+                            Skilled in software development, Flutter, Firebase, and web development with hands-on experience in IoT-based and real-time systems. 
+                            Currently serving as President of the Information Technology Students' Association with strong leadership, teamwork, and problem-solving skills.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-blue-400 text-sm font-medium mb-2">CURRENTLY LEARNING</div>
+                            <ul class="space-y-2 text-zinc-400">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Advanced Mobile Development</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Cloud Technologies</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> System Architecture</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-blue-400 text-sm font-medium mb-2">STRENGTHS</div>
+                            <ul class="space-y-2 text-zinc-400">
+                                <li>Full-Stack Development</li>
+                                <li>Mobile App Development (Flutter)</li>
+                                <li>IoT Solutions</li>
+                                <li>Team Leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right image -->
+                <div class="md:col-span-5">
+                    <div class="rounded-3xl overflow-hidden border border-zinc-700">
+                        <img src="linkdin profile.jpg" alt="Kaveesha De Silva" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Carousel -->
+            <div class="mt-24">
+                <h3 class="text-3xl font-semibold mb-10 text-center">Moments &amp; Achievements</h3>
+                
+                <div class="carousel-container max-w-5xl mx-auto">
+                    <div id="carousel" class="carousel gap-6">
+                        <!-- Images populated by JS -->
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-4 mt-8">
+                    <button onclick="prevSlide()" 
+                            class="w-12 h-12 flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 rounded-2xl transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextSlide()" 
+                            class="w-12 h-12 flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 rounded-2xl transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-28 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="section-header text-5xl font-semibold">Featured Projects</h2>
+                    <p class="text-zinc-400 mt-4">Recent work showcasing my skills</p>
+                </div>
+                <a href="#" class="text-blue-400 hover:text-blue-500 flex items-center gap-2 mt-6 md:mt-0">
+                    View all projects <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-28 bg-zinc-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-semibold mb-4">Let's Connect</h2>
+                <p class="text-zinc-400 max-w-md mx-auto">
+                    Interested in collaboration or have an exciting opportunity? Feel free to reach out!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <!-- Contact info -->
+                <div class="md:col-span-2 space-y-8">
+                    <div class="bg-zinc-800/50 p-8 rounded-3xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Email</div>
+                                <a href="mailto:kaveesha.msilva@gmail.com" class="hover:text-blue-400">kaveesha.msilva@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-zinc-800/50 p-8 rounded-3xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Phone</div>
+                                <a href="tel:+94763319400" class="hover:text-blue-400">+94 76 331 9400</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-zinc-800/50 p-8 rounded-3xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl">
+                                📍
+                            </div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Location</div>
+                                <div class="text-zinc-300">Sri Lanka</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact form -->
+                <div class="md:col-span-3 bg-zinc-800/30 p-10 rounded-3xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <input type="text" placeholder="First name" 
+                                   class="bg-zinc-900 border border-zinc-700 focus:border-blue-500 rounded-2xl px-6 py-4 outline-none">
+                            <input type="text" placeholder="Last name" 
+                                   class="bg-zinc-900 border border-zinc-700 focus:border-blue-500 rounded-2xl px-6 py-4 outline-none">
+                        </div>
+                        <input type="email" placeholder="Email address" 
+                               class="w-full bg-zinc-900 border border-zinc-700 focus:border-blue-500 rounded-2xl px-6 py-4 outline-none">
+                        <textarea placeholder="Tell me about your project..." rows="6"
+                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-blue-500 rounded-3xl px-6 py-4 outline-none resize-none"></textarea>
+                        
+                        <button type="submit"
+                                class="w-full py-5 bg-blue-600 hover:bg-blue-700 transition-colors rounded-3xl font-semibold text-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            © 2026 Kaveesha De Silva. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Sample gallery images (replace with your own if needed)
+        const galleryImages = [
+            "https://picsum.photos/id/1015/600/400",
+            "https://picsum.photos/id/133/600/400",
+            "https://picsum.photos/id/201/600/400",
+            "https://picsum.photos/id/251/600/400"
+        ];
+        
+        // Real projects from CV
+        const projects = [
+            {
+                title: "Smart Water Management",
+                desc: "Mobile application for efficient water management in agriculture with live monitoring using IoT.",
+                tech: "Flutter • Firebase • IoT • Arduino",
+                img: "https://picsum.photos/id/20/600/400",
+                link: "#"
+            },
+            {
+                title: "Smart Vehicle Parking System",
+                desc: "Desktop application for managing vehicle parking with entry/exit tracking and space allocation.",
+                tech: "C# • .NET",
+                img: "https://picsum.photos/id/201/600/400",
+                link: "#"
+            },
+            {
+                title: "Portfolio Website",
+                desc: "Modern responsive personal portfolio built to showcase projects and skills.",
+                tech: "React • Tailwind CSS",
+                img: "https://picsum.photos/id/133/600/400",
+                link: "#"
+            }
+        ];
+        
+        // Render carousel
+        function renderCarousel() {
+            const container = document.getElementById('carousel');
+            container.innerHTML = '';
+            
+            galleryImages.forEach((src, index) => {
+                const div = document.createElement('div');
+                div.className = 'min-w-[280px] md:min-w-[340px] flex-shrink-0';
+                div.innerHTML = `
+                    <div class="rounded-3xl overflow-hidden border border-zinc-700">
+                        <img src="${src}" class="w-full h-56 object-cover" alt="Gallery ${index}">
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+        
+        let currentSlide = 0;
+        
+        function moveCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 320}px)`;
+        }
+        
+        function nextSlide() {
+            const max = galleryImages.length - 1;
+            currentSlide = currentSlide >= max ? 0 : currentSlide + 1;
+            moveCarousel();
+        }
+        
+        function prevSlide() {
+            const max = galleryImages.length - 1;
+            currentSlide = currentSlide <= 0 ? max : currentSlide - 1;
+            moveCarousel();
+        }
+        
+        // Render projects
+        function renderProjects() {
+            const container = document.getElementById('projects-grid');
+            container.innerHTML = '';
+            
+            projects.forEach((project) => {
+                const card = document.createElement('div');
+                card.className = 'project-card bg-zinc-900 rounded-3xl overflow-hidden cursor-pointer group';
+                card.innerHTML = `
+                    <div class="h-56 overflow-hidden">
+                        <img src="${project.img}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-7">
+                        <h3 class="font-semibold text-2xl mb-2">${project.title}</h3>
+                        <p class="text-zinc-400 mb-5 line-clamp-2">${project.desc}</p>
+                        <div class="text-blue-400 text-sm">${project.tech}</div>
+                    </div>
+                `;
+                card.onclick = () => {
+                    window.open(project.link, '_blank');
+                };
+                container.appendChild(card);
+            });
+        }
+        
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // CV Download
+        document.getElementById('download-cv').addEventListener('click', (e) => {
+            e.preventDefault();
+            const link = document.createElement('a');
+            link.href = '/home/workdir/attachments/Kaveesha De Silva CV.pdf'; // Adjust path if needed
+            link.download = 'Kaveesha_De_Silva_CV.pdf';
+            link.click();
+            
+            // Toast
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-8 right-8 bg-emerald-600 text-white px-6 py-4 rounded-3xl shadow-2xl flex items-center gap-3 z-50';
+            toast.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>CV downloaded successfully!</span>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.4s';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 400);
+            }, 2800);
+        });
+        
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Thank you! I'll get back to you soon.");
+            e.target.reset();
+        });
+        
+        // Initialize
+        function init() {
+            renderCarousel();
+            renderProjects();
+            
+            setInterval(() => {
+                nextSlide();
+            }, 4000);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
