@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/images/Portfolio.png)" width="500"/>
+  <img src="src/images/Portfolio.png" width="500"/>
 </p>
 
 # Getting Started with Create React App
