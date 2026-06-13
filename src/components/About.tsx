@@ -31,7 +31,7 @@ const About = () => (
             <h2 className="about-bio__heading">About Me</h2>
             <div className="about-bio__divider" aria-hidden="true" />
             <p className="about-bio__body">
-              Motivated and detail-oriented Information Technology undergraduate pursuing a
+              Motivated and detail oriented Information Technology undergraduate pursuing a
               BICT (Hons) degree with specialisation in Software System Technology at the
               University of Kelaniya. Skilled in Flutter, Firebase, IoT, and real-time systems.
             </p>
